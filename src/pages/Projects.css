@@ -1,0 +1,32 @@
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.project-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.project-description {
+  flex-grow: 1;
+  margin-bottom: 15px;
+}
+
+.project-technologies {
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+.project-preview-button {
+  align-self: flex-start;
+}

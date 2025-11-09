@@ -11,3 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Keep content and navbar above the WebGL overlay */
+.App {
+  position: relative;
+  z-index: 2;
+  background: transparent;
+}
+
+nav,
+.navbar {
+  position: relative;
+  z-index: 3;
+}
