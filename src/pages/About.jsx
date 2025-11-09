@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ModelViewer from '../components/ModelViewer';
 
 const About = () => {
+  const [showModel, setShowModel] = useState(false);
   return (
     <div className="page-container">
       <section className="container page-section">
@@ -48,8 +49,19 @@ const About = () => {
             </div>
           </div>
           <div className="about-right">
-            <div className="model-box">
-              <ModelViewer src="/ROBOT 3.glb" alt="Robot 3D Model" />
+            <div className="model-box" style={{ minHeight: '260px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              {showModel ? (
+                <ModelViewer src="/ROBOT 3.glb" alt="Robot 3D Model" />
+              ) : (
+                <div style={{ textAlign: 'center' }}>
+                  <button className="btn-primary" onClick={() => setShowModel(true)}>
+                    Load 3D Model
+                  </button>
+                  <p style={{ marginTop: '0.75rem', color: '#b0b0b0' }}>
+                    Loads on click to keep the page fast.
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         </div>

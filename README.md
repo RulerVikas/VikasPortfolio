@@ -1,3 +1,92 @@
+# Vikas Portfolio
+
+Modern personal portfolio built with React and React Router. It showcases About, Skills, Experience, Projects, Certificates, and Contact sections, plus interactive WebGL effects and a 3D model viewer.
+
+## Live Deployment (Vercel)
+
+Once deployed, your site will be available at a Vercel URL (for example, `https://vikas-portfolio.vercel.app/`). See the steps below to deploy.
+
+## Tech Stack
+
+- React 18 and React Router v6
+- Styling: Bootstrap 5 and custom CSS
+- Visuals: WebGL fluid splash (`webgl-fluid`), custom Aurora shader (`ogl`), and 3D model viewer (`@google/model-viewer`)
+- Icons: Font Awesome
+
+## Features
+
+- About page with highlight cards: Education, Specialization, Passion
+- 3D model viewer showcasing `/ROBOT 3.glb` with environment lighting
+- Projects: Individual and Team projects with preview/code links
+- Experience section with internship and role summaries
+- Smooth “Back to Top” button and animated visuals
+
+## Getting Started
+
+Prerequisites: Node.js 18+ and npm.
+
+```bash
+npm install
+npm start
+```
+
+- Development server runs at `http://localhost:3000`.
+- Build for production:
+
+```bash
+npm run build
+```
+
+## Project Scripts
+
+- `npm start` — start development server
+- `npm run build` — production build to `build/`
+- `npm test` — run tests (if any configured)
+
+## Folder Structure
+
+- `src/components/` — UI components (Navbar, ModelViewer, WebGLSplashCursor, MagicBento, Aurora, BackToTop)
+- `src/pages/` — page components (Home, About, Skills, Experience, Projects, Certificates, Contact)
+- `public/` — static assets (`index.html`, `ROBOT 3.glb` and textures)
+- `App.css` — global styles
+
+## Deploy to Vercel
+
+1) Push your repository to GitHub: `RulerVikas/VikasPortfolio`.
+2) Sign in at https://vercel.com and click “New Project”.
+3) Import the GitHub repo and configure:
+   - Framework Preset: “Create React App” (or “Other”)
+   - Root Directory: `./`
+   - Build Command: `npm run build`
+   - Output Directory: `build`
+4) Click “Deploy”. After the build completes, Vercel gives a live URL.
+
+### Client-side Routing on Vercel
+
+This app uses React Router. If deep links like `/about` show 404s after refresh, add a `vercel.json` with a rewrite to `index.html`:
+
+```json
+{
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+}
+```
+
+Commit it to the repo and redeploy.
+
+## Environment Variables
+
+No secrets are required. If you add APIs later, configure variables in Vercel under Project Settings → Environment Variables.
+
+## Acknowledgements
+
+- `@google/model-viewer` for 3D model rendering
+- `webgl-fluid` and `ogl` for interactive visuals
+- Bootstrap and Font Awesome for UI and icons
+
+## License
+
+Personal project — all rights reserved. Contact me for reuse permissions.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
